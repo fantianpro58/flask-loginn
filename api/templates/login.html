@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block body %}
+<div style="min-height:100vh; display:flex; align-items:center; justify-content:center; padding:16px;">
+  <div class="card" style="width:100%; max-width:380px;">
+    <h2 style="margin-top:0;">Login</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, msg in messages %}
+        <div class="alert alert-{{ category }}">{{ msg }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    <form method="post">
+      <label for="username">Username</label>
+      <input id="username" name="username" required autofocus>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" required>
+      <button type="submit">Masuk</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

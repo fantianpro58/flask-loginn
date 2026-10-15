@@ -1,0 +1,12 @@
+[project]
+name = "flask-login"
+version = "0.1.0"
+dependencies = [
+  "Flask==3.0.3",
+  "Flask-SQLAlchemy==3.1.1",
+  "psycopg[binary]>=3.2",
+  "python-dotenv==1.0.1",
+]
+
+[tool.vercel]
+entrypoint = "api.index:app"

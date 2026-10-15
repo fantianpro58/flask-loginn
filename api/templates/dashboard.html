@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block body %}
+<nav style="background:#1e293b; color:#fff; padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+  <strong>Dashboard</strong>
+  <a class="btn" href="{{ url_for('logout') }}" style="background:#ef4444; padding:8px 14px;">Logout</a>
+</nav>
+
+<main style="max-width:900px; margin:24px auto; padding:0 16px;">
+  <div class="card" style="margin-bottom:16px;">
+    <h2 style="margin-top:0;">Selamat datang, {{ nama }} 👋</h2>
+    <p style="margin-bottom:0; color:#475569;">Anda berhasil login. Data diambil dari database Supabase.</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px;">
+    <div class="card">
+      <div style="color:#64748b; font-size:14px;">Total User</div>
+      <div style="font-size:32px; font-weight:700;">{{ total_user }}</div>
+    </div>
+    <div class="card">
+      <div style="color:#64748b; font-size:14px;">Status Database</div>
+      <div style="font-size:20px; font-weight:700; color:#16a34a;">Terhubung</div>
+    </div>
+  </div>
+</main>
+{% endblock %}
